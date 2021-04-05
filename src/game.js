@@ -41,20 +41,12 @@ class Game {
         if (event.key === "a") this.player.setDirection("up");
      
         if (event.key === "ArrowUp") {
+            
             this.player2.setDirection("up")
-       
          };
          if (event.key === "s"){this.bullet.direction = 1;
         }
         if (event.key === "ArrowLeft"){this.bullet2.direction = 1;}
-
-
-        // if (event.key === "c") {
-        //     this.bullet.updatePosition();
-        //     this.bullet.draw();
-        // }
-
-       
         
       }
 
@@ -125,7 +117,7 @@ class Game {
           if (this.player2.didCollide(this.bullet)) {
             this.player2.removeLife();
             console.log("lives", this.player2.lives);
-
+            
             this.bullet.x = 1400;
 
             if (this.player2.lives === 0) {

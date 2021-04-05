@@ -6,9 +6,9 @@ class Player {
 
       this.lives = lives;
     
-      this.size = 100;
+      this.size = 200;
     
-      this.x = 50;
+      this.x = 5;
       this.y = this.canvas.height - this.size;
   
       this.direction = 0;
@@ -18,7 +18,7 @@ class Player {
   
     setDirection(direction) {
 
-      if (direction === "up") {
+      if (direction === "up" && this.y ==this.canvas.height - this.size) {
         this.direction = -1;
       }
 
@@ -31,7 +31,7 @@ class Player {
     }
 
     handleScreenCollision() {
-        const screenTop = this.canvas.height/2;
+        const screenTop = this.canvas.height/2.3;
         const screenBottom = this.canvas.height;
     
         const playerTop = this.y;
@@ -45,7 +45,7 @@ class Player {
 
         let img = document.createElement('img');
         img.src ="../styles/images/charizard copia.gif" 
-        this.ctx.drawImage(img, this.x - 50, this.y-100, 200, 200);
+        this.ctx.drawImage(img, this.x, this.y, this.size, this.size);
      
 
     //   this.ctx.fillStyle = "#66D3FA";

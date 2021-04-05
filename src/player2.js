@@ -2,22 +2,17 @@ class Player2 {
     constructor(canvas, lives) {
       this.canvas = canvas;
       this.ctx = this.canvas.getContext("2d");
-  
       this.lives = lives;
-    
-      this.size = 100;
-
-      this.x = 600;
+      this.size = 200;
+      this.x = 550;
       this.y = this.canvas.height - this.size;
-     
       this.direction = 0;
-
       this.speed = 10;
     }
   
     setDirection(direction) {
      
-      if (direction === "up") {
+      if (direction === "up" && this.y ==this.canvas.height - this.size) {
         this.direction = -1;
       }
 
@@ -30,7 +25,7 @@ class Player2 {
     }
 
     handleScreenCollision() {
-        const screenTop = this.canvas.height/2;
+        const screenTop = this.canvas.height/2.3;
         const screenBottom = this.canvas.height;
     
         const playerTop = this.y;
@@ -40,15 +35,18 @@ class Player2 {
         else if (playerTop <= screenTop) this.setDirection("down");
       }
   
+  
     
     draw() {
         let img = document.createElement('img');
         img.src ="../styles/images/charizard.gif" 
-        this.ctx.drawImage(img, this.x -70, this.y-100, 200, 200);
+        this.ctx.drawImage(img, this.x, this.y, this.size, this.size);
     }
     
     removeLife() {
+
         this.lives -= 1;
+        this.ctx.fillText(this.lives, this.x, this.y + 50)
       }
 
     didCollide(bullet) {

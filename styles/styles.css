@@ -82,13 +82,13 @@ html {
   .game .canvas-container {
     flex: 1;
     background: transparent;
-    background-image: url("../styles/images/df4e8ba28f912bf9cdf9fa0dfc196411.png");
+    background-image: url("../styles/images/Background.png");
     background-size: cover;
     
   }
   
 .startGame{
-    background-image: url("../styles/images/d38857eeb3ff01be07c05fbfa80d3385.png");
+    background-image: url("../styles/images/Background2.png");
     background-size: cover;
     width: 100%;
     height: 100%;
