@@ -2,9 +2,9 @@ class Bullet2 {
     constructor(canvas, imgBullet2) {
       this.canvas = canvas;
       this.ctx = this.canvas.getContext("2d");
-      this.size = 40;
-      this.x = 565;
-      this.y = this.canvas.height - 90;
+      this.size = 70;
+      this.x = 910;
+      this.y = this.canvas.height - 240;
       this.imgBullet2 = imgBullet2
       this.direction = 0;
       this.speed = -10;
@@ -16,7 +16,7 @@ class Bullet2 {
         
     this.x += this.direction * this.speed;
     if (this.x < 0) {
-        this.x = 565;
+        this.x = 910;
         this.direction = 0};
           
     }

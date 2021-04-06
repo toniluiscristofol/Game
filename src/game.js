@@ -141,12 +141,12 @@ class Game {
             this.gameIsOver = true;
             endGame(this.player.lives, this.player2.lives);
           }
-        updateGameStats() {
+        // updateGameStats() {
             
-            this.livesElement.innerHTML = this.player.lives;
-            this.lives2Element.innerHTML = this.player2.lives;
-            this.scoreElement.innerHTML = this.score;
-          }
+        //     this.livesElement.innerHTML = this.player.lives;
+        //     this.lives2Element.innerHTML = this.player2.lives;
+        //     this.scoreElement.innerHTML = this.score;
+        //   }
     
    
   }

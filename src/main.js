@@ -21,7 +21,7 @@ function createSplashScreen() {
   splashScreen = buildDom(`
   <main class="startGame">
   <header>
-    <h1 class="h1">JUMP</h1>
+    <h1 class="h1">JUMPERS</h1>
     <button id="start">START</button>
   </header>
   <div class="selectPlayer">
@@ -126,6 +126,7 @@ function createGameScreen() {
         </div>
     </main>
     `);
+    
 
   document.body.appendChild(gameScreen);
   return gameScreen; //this we will explain later

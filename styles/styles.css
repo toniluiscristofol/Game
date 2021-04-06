@@ -6,9 +6,8 @@ html {
   *:before,
   *:after {
     box-sizing: inherit;
-
-
   }
+
   
   body {
     margin: 0;
@@ -42,7 +41,7 @@ html {
   
   @media (min-width: 768px) {
     .container {
-      max-width: 728px; /* Resizes the container to 728px for large screens */
+     
       margin: 0 auto;
     }
   }
@@ -80,15 +79,17 @@ html {
   }
   
   .game .canvas-container {
+    
     flex: 1;
     background: transparent;
-    background-image: url("../styles/images/Background.png");
+   /* // background-image: url("../styles/images/Background.png");// */
+    background-image: url("../styles/images/Pokemon\ stadium\ Gran.png"); 
     background-size: cover;
     
   }
-  
+
 .startGame{
-    background-image: url("../styles/images/Background2.png");
+    background-image: url("../styles/images/Pokemon\ stadium\ Gran.png"); 
     background-size: cover;
     width: 100%;
     height: 100%;
@@ -123,7 +124,7 @@ html {
 .h1{
 
     font-size: 200px;
-    color: red;
+    color: rgb(223, 5, 5);
     letter-spacing: 2cm;
 
 }
@@ -134,4 +135,57 @@ html {
     height: 50px;
     font-size: 24px;
     letter-spacing: 1mm;
+    background-color:white ;
 }
+
+
+  
+  #start:hover {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
+
+  
+ .selectPlayer{
+     margin-top: 100px;
+ }
+
+
+  .characterP1{
+
+    width: 600px;
+    height: 50px;
+    font-size: 24px;
+    letter-spacing: 1mm;
+    background-color:white ;
+    margin-left: 25px;
+
+}
+
+.characterP1:hover {
+
+    background-color: #e60303; /* Green */
+    color: white;
+      
+}
+
+
+.characterP2{
+
+    width: 600px;
+    height: 50px;
+    font-size: 24px;
+    letter-spacing: 1mm;
+    background-color:white ;
+    margin-left: 170px;
+
+
+}
+
+.characterP2:hover{
+
+    background-color: #4c7aaf; /* Green */
+    color: white;
+      
+}
+

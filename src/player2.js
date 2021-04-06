@@ -6,8 +6,8 @@ class Player2 {
       this.ctx = this.canvas.getContext("2d");
       this.lives = lives;
       this.size = 200;
-      this.x = 550;
-      this.y = this.canvas.height - this.size;
+      this.x = 900;
+      this.y = this.canvas.height - this.size -120;
       this.img2 = img2;
       this.direction = 0;
       this.speed = 10;
@@ -15,7 +15,7 @@ class Player2 {
   
     setDirection(direction) {
      
-      if (direction === "up" && this.y ==this.canvas.height - this.size) {
+      if (direction === "up" && this.y ==this.canvas.height - this.size -120) {
         this.direction = -1;
       }
 
@@ -28,13 +28,13 @@ class Player2 {
     }
 
     handleScreenCollision() {
-        const screenTop = this.canvas.height/2.5;
-        const screenBottom = this.canvas.height;
+        const screenTop = this.canvas.height/4;
+        const screenBottom = this.canvas.height -120;
     
         const playerTop = this.y;
         const playerBottom = this.y + this.size;
     
-        if (playerBottom >= screenBottom) this.y = this.canvas.height - this.size;
+        if (playerBottom >= screenBottom) this.y = this.canvas.height - this.size -120;
         else if (playerTop <= screenTop) this.setDirection("down");
       }
   
