@@ -6,42 +6,53 @@ class Game {
       this.player2 = null;
       this.bullet = null;
       this.bullet = null;
+      //this.img = null;//
       this.gameIsOver = false;
       this.gameScreen = gameScreen;
       this.score = 0;
       this.livesElement = undefined;
       this.scoreElement = undefined;
-    //   this.timeoutId = null;
+ 
     }
   
 
-    start() {
+    start(img, img2, imgBullet, imgBullet2) {
   
       this.livesElement = this.gameScreen.querySelector(".lives .value");
       this.lives2Element = this.gameScreen.querySelector(".lives2 .value");
       this.scoreElement = this.gameScreen.querySelector(".score .value");
-  
       this.canvas = this.gameScreen.querySelector("canvas");
       this.ctx = this.canvas.getContext("2d");
-  
-    
       this.canvasContainer = this.gameScreen.querySelector(".canvas-container");
       this.containerWidth = this.canvasContainer.clientWidth;
       this.containerHeight = this.canvasContainer.clientHeight;
       this.canvas.setAttribute("width", this.containerWidth);
       this.canvas.setAttribute("height", this.containerHeight);
-  
-      this.player = new Player(this.canvas, 5);
-      this.player2 = new Player2(this.canvas, 5);
-      this.bullet = new Bullet(this.canvas, 5);
-      this.bullet2 = new Bullet2(this.canvas, 5);
-      
+
+      this.player = new Player(this.canvas, 5, img);
+      this.player2 = new Player2(this.canvas, 5, img2);
+    //   this.player = new Player(this.canvas, 5, 5);
+    //   this.player2 = new Player(this.canvas, 5, 550 );
+      this.bullet = new Bullet(this.canvas, imgBullet);
+      this.bullet2 = new Bullet2(this.canvas, imgBullet2);
+    //   this.bullet = new Bullet(this.canvas, 160, 10);
+    //   this.bullet2 = new Bullet(this.canvas, 565, -10);
 
       function handleKeyDown(event) {
-        if (event.key === "a") this.player.setDirection("up");
-     
-        if (event.key === "ArrowUp") {
-            
+        if (event.key === "a") {
+            this.player.setDirection("up") 
+        }
+       
+        if (event.key === "d") {
+            this.player.x += 10; 
+        }
+
+        if (event.key === "z") {
+            this.player.x -= 10; 
+        }
+        
+    
+        if (event.key === "ArrowUp") {  
             this.player2.setDirection("up")
          };
          if (event.key === "s"){this.bullet.direction = 1;
@@ -128,7 +139,7 @@ class Game {
       
         gameOver() {
             this.gameIsOver = true;
-            endGame(this.score);
+            endGame(this.player.lives, this.player2.lives);
           }
         updateGameStats() {
             

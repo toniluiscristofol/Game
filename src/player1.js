@@ -1,18 +1,13 @@
 class Player {
-    constructor(canvas, lives) {
+    constructor(canvas, lives, img) {
       this.canvas = canvas;
       this.ctx = this.canvas.getContext("2d");
-  
-
       this.lives = lives;
-    
       this.size = 200;
-    
       this.x = 5;
+      this.img = img
       this.y = this.canvas.height - this.size;
-  
       this.direction = 0;
-    
       this.speed = 10;
     }
   
@@ -28,10 +23,11 @@ class Player {
     updatePosition() {
 
       this.y += this.direction * this.speed;
+      
     }
 
     handleScreenCollision() {
-        const screenTop = this.canvas.height/2.3;
+        const screenTop = this.canvas.height/2.5;
         const screenBottom = this.canvas.height;
     
         const playerTop = this.y;
@@ -43,9 +39,11 @@ class Player {
   
     draw() {
 
-        let img = document.createElement('img');
-        img.src ="../styles/images/charizard copia.gif" 
-        this.ctx.drawImage(img, this.x, this.y, this.size, this.size);
+        let imgP1 = document.createElement('img');
+        imgP1.src = this.img;
+        this.ctx.drawImage(imgP1, this.x, this.y, this.size, this.size);
+        this.ctx.font = "50px Arial"
+        this.ctx.fillText(this.lives, this.x + 100, this.y)
      
 
     //   this.ctx.fillStyle = "#66D3FA";
@@ -53,6 +51,7 @@ class Player {
     }
     removeLife() {
         this.lives -= 1;
+
       }
 
     didCollide(bullet) {

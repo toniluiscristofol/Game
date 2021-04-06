@@ -26,16 +26,16 @@ function createSplashScreen() {
   </header>
   <div class="selectPlayer">
   <div class="characterP1">
-    <button id="selectButton">pikachu</button>
-    <button id="selectButton">bulbasaur</button>
-    <button id="selectButton">charizar</button>
-    <button id="selectButton">charmander</button>
+    <button id="pikachuP1">pikachu</button>
+    <button id="bulbasaurP1">bulbasaur</button>
+    <button id="charizarP1">charizar</button>
+    <button id="charmanderP1">charmander</button>
   </div>
   <div class="characterP2">
-  <button id="selectButton">charizar</button>
-  <button id="selectButton">pikachu</button>
-  <button id="selectButton">bulbasaur</button>
-  <button id="selectButton">charmander</button>
+  <button id="pikachuP2">pikachu</button>
+  <button id="bulbasaurP2">bulbasaur</button>
+  <button id="charizarP2">charizar</button>
+  <button id="charmanderP2">charmander</button>
 </div>
 </div>
   </main>
@@ -45,8 +45,66 @@ function createSplashScreen() {
 
   //seleccionamos el botón que hemos creado y le creamos un eventListener para después crear el jugo
   const startButton = splashScreen.querySelector("button");
-
-  startButton.addEventListener("click", startGame);
+  let img2 = "" ;
+  let img = "";
+  let imgBullet = "";
+  let imgBullet2 = "";
+  let statement = "Please Select Player"
+  startButton.addEventListener("click", () => {
+      if(ready1 == true && ready2 == true){startGame(img, img2, imgBullet, imgBullet2)}
+      else{
+          console.log("please select player")
+          return statement}
+    });
+        let pikachuP1 = document.querySelector("#pikachuP1")
+        let bulbasaurP1 = document.querySelector("#bulbasaurP1")
+        let charizarP1 = document.querySelector("#charizarP1")
+        let charmanderP1 = document.querySelector("#charmanderP1")
+        pikachuP1.addEventListener('click', () =>{
+            img = "../styles/images/pikachu 3d.png"
+            imgBullet = "../styles/images/pikachu 3d.png"
+            ready1 = true;        
+        })
+        bulbasaurP1.addEventListener('click', () =>{
+            img = "../styles/images//venusaur-mega 3d.png"
+            imgBullet = "../styles/images/pikachu 3d.png"
+            ready1 = true;
+        })
+        charizarP1.addEventListener('click', () =>{
+            img = "../styles/images/charizard 3d R.png" 
+            imgBullet = "../styles/images/charizard 3d R.png" 
+            ready1 = true;
+        })
+        charmanderP1.addEventListener('click', () =>{
+            img = "../styles/images/charizard.gif" 
+            imgBullet = "../styles/images/charizard 3d R.png" 
+            ready1 = true;
+        })
+    
+       let pikachuP2 = document.querySelector("#pikachuP2")
+       let bulbasaurP2 = document.querySelector("#bulbasaurP2")
+       let charizarP2 = document.querySelector("#charizarP2")
+       let charmanderP2 = document.querySelector("#charmanderP2")
+       pikachuP2.addEventListener('click', () =>{
+           img2 = "../styles/images/pikachu 3d.png"
+           imgBullet2 = "../styles/images/pikachu 3d.png"
+           ready2 = true;        
+       })
+       bulbasaurP2.addEventListener('click', () =>{
+           img2 = "../styles/images//venusaur-mega 3d.png" 
+           imgBullet2 = "../styles/images/charizard 3d R.png" 
+           ready2 = true;
+       })
+       charizarP2.addEventListener('click', () =>{
+           img2 = "../styles/images/charizard 3d R.png" 
+           imgBullet2 = "../styles/images/charizard 3d R.png"
+           ready2 = true;
+       })
+       charmanderP2.addEventListener('click', () =>{
+           img2 = "../styles/images/charizard.gif" 
+           imgBullet2 = "../styles/images/charizard.gif" 
+           ready2 = true;
+       })
 }
 
 function removeSplashScreen() {
@@ -58,24 +116,10 @@ function removeSplashScreen() {
 // -- game screen
 function createGameScreen() {
   //para un correcto tabulado del string, tabular de la línea 2 hasta el final
+
+  
   gameScreen = buildDom(`
     <main class="game container">
-        <header>
-            <div class="lives">
-                <span class="label">Lives:</span>
-                <span class="value"></span>
-            </div>
-            <div class="lives2">
-                <span class="label">Lives:</span>
-                <span class="value"></span>
-            </div>
-
-
-            <div class="score">
-                <span class="label">Score:</span>
-                <span class="value"></span>
-            </div>
-        </header>
 
         <div class="canvas-container">
             <canvas></canvas>
@@ -92,16 +136,23 @@ function removeGameScreen() {
 }
 
 // -- game over screen
-function createGameOverScreen(score) {
+function createGameOverScreen(player1Lives,player2Lives) {
+
+    let finalResult = ''
+    if (player1Lives > player2Lives){
+              finalResult = `Player 1 Wins`
+          }
+          else { finalResult = `player 2 Wins`}
+
   gameOverScreen = buildDom(`
     <main>
         <h1>GAME OVER</h1>
-        <p>Your score: <span>${score}</span> </p>
+        <p>player 1 lives = ${player1Lives}  Player 2 lives = ${player2Lives} ${finalResult} </span> </p>
         <button>Restart</button>
     </main>
     `);
     const button = gameOverScreen.querySelector("button");
-    button.addEventListener("click", startGame)
+    button.addEventListener("click", createSplashScreen)
 
     document.body.appendChild(gameOverScreen)
 }
@@ -110,7 +161,7 @@ function removeGameOverScreen() {
 }
 
 // -- Setting the game state - start or game over
-function startGame() {
+function startGame(img, img2, imgBullet, imgBullet2) {
   removeSplashScreen();
   if(gameOverScreen){
       removeGameOverScreen();
@@ -119,12 +170,14 @@ function startGame() {
 
   game = new Game(gameScreen);
   //game.gameScreen = gameScreen;
-  game.start();
+  game.start(img, img2, imgBullet, imgBullet2);
 }
 
-function endGame(score) {
+function endGame(player1Lives,player2Lives) {
+ 
   removeGameScreen();
-  createGameOverScreen(score);
+ 
+  createGameOverScreen(player1Lives,player2Lives);
 }
 
 window.addEventListener("load", createSplashScreen);
