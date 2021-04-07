@@ -5,9 +5,9 @@ class Player2 {
       this.canvas = canvas;
       this.ctx = this.canvas.getContext("2d");
       this.lives = lives;
-      this.size = 200;
-      this.x = 900;
-      this.y = this.canvas.height - this.size -120;
+      this.size = 130;
+      this.x = 750;
+      this.y = this.canvas.height - this.size -180;
       this.img2 = img2;
       this.direction = 0;
       this.speed = 10;
@@ -15,7 +15,7 @@ class Player2 {
   
     setDirection(direction) {
      
-      if (direction === "up" && this.y ==this.canvas.height - this.size -120) {
+      if (direction === "up" && this.y ==this.canvas.height - this.size -180) {
         this.direction = -1;
       }
 
@@ -28,13 +28,13 @@ class Player2 {
     }
 
     handleScreenCollision() {
-        const screenTop = this.canvas.height/4;
-        const screenBottom = this.canvas.height -120;
+        const screenTop = this.canvas.height/6;
+        const screenBottom = this.canvas.height -180;
     
         const playerTop = this.y;
         const playerBottom = this.y + this.size;
     
-        if (playerBottom >= screenBottom) this.y = this.canvas.height - this.size -120;
+        if (playerBottom >= screenBottom) this.y = this.canvas.height - this.size -180;
         else if (playerTop <= screenTop) this.setDirection("down");
       }
   
@@ -42,12 +42,13 @@ class Player2 {
     
     draw() {
 
+        this.ctx.font = "200px karma Future"
+        this.ctx.fillText(this.lives, 800, 200)
         let imgP2 = document.createElement('img');
         imgP2.src = this.img2;
         console.log(imgP2.src)
         this.ctx.drawImage(imgP2, this.x, this.y, this.size, this.size);
-        this.ctx.font = "50px Arial"
-        this.ctx.fillText(this.lives, this.x +50, this.y)
+       
       
     }
     

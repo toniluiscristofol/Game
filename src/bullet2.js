@@ -3,7 +3,7 @@ class Bullet2 {
       this.canvas = canvas;
       this.ctx = this.canvas.getContext("2d");
       this.size = 70;
-      this.x = 910;
+      this.x = 675;
       this.y = this.canvas.height - 240;
       this.imgBullet2 = imgBullet2
       this.direction = 0;
@@ -16,7 +16,7 @@ class Bullet2 {
         
     this.x += this.direction * this.speed;
     if (this.x < 0) {
-        this.x = 910;
+        this.x = 675;
         this.direction = 0};
           
     }

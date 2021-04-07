@@ -18,6 +18,7 @@ function buildDom(htmlString) {
 // -- splash screen
 function createSplashScreen() {
   //para un correcto tabulado del string, tabular de la línea 2 hasta el final
+  
   splashScreen = buildDom(`
   <main class="startGame">
   <header>
@@ -25,17 +26,20 @@ function createSplashScreen() {
     <button id="start">START</button>
   </header>
   <div class="selectPlayer">
+
   <div class="characterP1">
-    <button id="pikachuP1">pikachu</button>
-    <button id="bulbasaurP1">bulbasaur</button>
-    <button id="charizarP1">charizar</button>
-    <button id="charmanderP1">charmander</button>
+    <h3>select Player 1</h3>
+    <button class="selectPokemon" id="pikachuP1">pikachu</button>
+    <button class="selectPokemon" id="bulbasaurP1">bulbasaur</button>
+    <button class="selectPokemon"  id="charizarP1">charmander</button>
+    <button class="selectPokemon"  id="charmanderP1">squirtle</button>
   </div>
   <div class="characterP2">
-  <button id="pikachuP2">pikachu</button>
-  <button id="bulbasaurP2">bulbasaur</button>
-  <button id="charizarP2">charizar</button>
-  <button id="charmanderP2">charmander</button>
+  <h3>select Player 2</h3>
+  <button class="selectPokemon" id="pikachuP2">pikachu</button>
+  <button class="selectPokemon" id="bulbasaurP2">bulbasaur</button>
+  <button class="selectPokemon" id="charizarP2">charmander</button>
+  <button class="selectPokemon" id="charmanderP2">squirtle</button>
 </div>
 </div>
   </main>
@@ -61,24 +65,32 @@ function createSplashScreen() {
         let charizarP1 = document.querySelector("#charizarP1")
         let charmanderP1 = document.querySelector("#charmanderP1")
         pikachuP1.addEventListener('click', () =>{
-            img = "../styles/images/pikachu 3d.png"
-            imgBullet = "../styles/images/pikachu 3d.png"
-            ready1 = true;        
+            img = "../styles/images/personatges3d/pikachu copia.png"
+            imgBullet = "../styles/images/sprites ataque/rayo.png"
+            ready1 = true; 
+            bulbasaurP1.addClass('selectedPoke')
+            charizarP1.disabled = true;
+            bulbasaurP1.disabled = true;
+            charizarP1.disabled = true;
+            charmanderP1.disabled = true;
         })
         bulbasaurP1.addEventListener('click', () =>{
-            img = "../styles/images//venusaur-mega 3d.png"
-            imgBullet = "../styles/images/pikachu 3d.png"
+            img = "../styles/images/personatges3d/bulbasaur copia.png"
+            imgBullet = "../styles/images/sprites ataque/hojas3d.png"
             ready1 = true;
+            bulbasaurP1.addClass('selectedPoke')
         })
         charizarP1.addEventListener('click', () =>{
-            img = "../styles/images/charizard 3d R.png" 
-            imgBullet = "../styles/images/charizard 3d R.png" 
+            img = "../styles/images/personatges3d/charmander copia.png" 
+            imgBullet = "../styles/images/sprites ataque/fireball.png"
             ready1 = true;
+            bulbasaurP1.addClass('selectedPoke')
         })
         charmanderP1.addEventListener('click', () =>{
-            img = "../styles/images/charizard.gif" 
-            imgBullet = "../styles/images/charizard 3d R.png" 
+            img = "../styles/images/personatges3d/squirtle copia.png" 
+            imgBullet = "../styles/images/sprites ataque/agua.png" 
             ready1 = true;
+            bulbasaurP1.addClass('selectedPoke')
         })
     
        let pikachuP2 = document.querySelector("#pikachuP2")
@@ -87,24 +99,26 @@ function createSplashScreen() {
        let charmanderP2 = document.querySelector("#charmanderP2")
        pikachuP2.addEventListener('click', () =>{
            img2 = "../styles/images/pikachu 3d.png"
-           imgBullet2 = "../styles/images/pikachu 3d.png"
+           imgBullet2 = "../styles/images/sprites ataque/rayo.png"
            ready2 = true;        
        })
        bulbasaurP2.addEventListener('click', () =>{
-           img2 = "../styles/images//venusaur-mega 3d.png" 
-           imgBullet2 = "../styles/images/charizard 3d R.png" 
+           img2 = "../styles/images/personatges3d/bulbasaur.png"
+           imgBullet2 = "../styles/images/sprites ataque/hojas3d.png" 
            ready2 = true;
        })
        charizarP2.addEventListener('click', () =>{
-           img2 = "../styles/images/charizard 3d R.png" 
-           imgBullet2 = "../styles/images/charizard 3d R.png"
+           img2 = "../styles/images/personatges3d/charmander.png" 
+           imgBullet2 = "../styles/images/sprites ataque/fireball.png"
            ready2 = true;
        })
        charmanderP2.addEventListener('click', () =>{
-           img2 = "../styles/images/charizard.gif" 
-           imgBullet2 = "../styles/images/charizard.gif" 
+           img2 = "../styles/images/personatges3d/squirtle.png" 
+           imgBullet2 = "../styles/images/sprites ataque/agua.png" 
            ready2 = true;
        })
+
+       removeGameOverScreen();
 }
 
 function removeSplashScreen() {
@@ -147,15 +161,20 @@ function createGameOverScreen(player1Lives,player2Lives) {
 
   gameOverScreen = buildDom(`
     <main>
-        <h1>GAME OVER</h1>
-        <p>player 1 lives = ${player1Lives}  Player 2 lives = ${player2Lives} ${finalResult} </span> </p>
+    <div class="gameOverScreen">
+        <h1 class="gameOver">GAME OVER</h1>
+        <div> player 1 lives = ${player1Lives}  </div>
+        <div> Player 2 lives = ${player2Lives} </div>
+        <div> ${finalResult} </div> </span> </p>
         <button>Restart</button>
+    </div>
     </main>
     `);
     const button = gameOverScreen.querySelector("button");
     button.addEventListener("click", createSplashScreen)
 
     document.body.appendChild(gameOverScreen)
+    
 }
 function removeGameOverScreen() {
     gameOverScreen.remove()
@@ -177,6 +196,8 @@ function startGame(img, img2, imgBullet, imgBullet2) {
 function endGame(player1Lives,player2Lives) {
  
   removeGameScreen();
+  ready1 = false;
+  ready2 = false;
  
   createGameOverScreen(player1Lives,player2Lives);
 }
