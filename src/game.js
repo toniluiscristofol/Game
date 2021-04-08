@@ -8,15 +8,15 @@ class Game {
       this.bullet = null;
       //this.img = null;//
       this.gameIsOver = false;
+     // this.mysound =  new sound("../styles/images/sounds/salto.wav")//
       this.gameScreen = gameScreen;
       this.score = 0;
       this.livesElement = undefined;
       this.scoreElement = undefined;
       this.framesCounter = 0;
       this.framesCounter1 = 0;
+      this.sound = new Sounds();
       
-      
- 
     }
   
 
@@ -45,6 +45,7 @@ class Game {
       function handleKeyDown(event) {
         if (event.key === "a") {
             this.player.setDirection("up") 
+            
 
         }
        
@@ -59,6 +60,7 @@ class Game {
     
         if (event.key === "ArrowUp") {  
             this.player2.setDirection("up")
+            this.sound.playJump();
          };
          if (event.key === "s"){this.bullet.direction = 1;
         }
@@ -116,8 +118,9 @@ class Game {
         
           if (this.player.didCollide(this.bullet2)) {
             this.player.removeLife();
+           
             console.log("lives", this.player.lives);
-        
+            this.sound.playLives();
         
     
             //mover el enemigo fuera de la pantalla
@@ -126,6 +129,7 @@ class Game {
     
             if (this.player.lives === 0) {
               this.gameOver();
+              this.sound.playGameOver();
             }
             
           }
@@ -133,11 +137,12 @@ class Game {
           if (this.player2.didCollide(this.bullet)) {
             this.player2.removeLife();
             console.log("lives", this.player2.lives);
-            
+            this.sound.playLives();
             this.bullet.x = 1400;
 
             if (this.player2.lives === 0) {
                 this.gameOver();
+                this.sound.playGameOver();
               }
 
         }};

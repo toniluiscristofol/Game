@@ -12,12 +12,14 @@ class Player2 {
       this.img2.src = img2
       this.direction = 0;
       this.speed = 10;
+      this.sound = new Sounds();
     }
   
     setDirection(direction) {
      
       if (direction === "up" && this.y ==this.canvas.height - this.size -180) {
         this.direction = -1;
+        this.sound.playJump2();
       }
 
       else if (direction === "down") this.direction = 1;
