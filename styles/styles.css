@@ -1,11 +1,11 @@
 @font-face{
     font-family:karma future;
-    src: url("/styles/images/karma\ future.ttf");
+    src: url("./images/karma\ future.ttf");
 }
 
 @font-face{
     font-family:karma suture;
-    src: url("/styles/images/karma\ suture.ttf");
+    src: url("./images/karma\ suture.ttf");
 }
 
 
@@ -96,9 +96,9 @@ html {
 
     flex: 1;
    
-   /* // background-image: url("../styles/images/Background.png");// */
-    /* background-image: url("../styles/images/Pokemon\ stadium\ Gran.png");  */
-    background-image: url("/styles/images/Estadium\ Plane.jpg");
+   /* // background-image: url(".../images/Background.png");// */
+    /* background-image: url(".../images/Pokemon\ stadium\ Gran.png");  */
+    background-image: url("./images/Estadium\ Plane.jpg");
     background-size: cover;
     background-position: center;
     margin-left: 4cm;
@@ -109,8 +109,8 @@ html {
   }
 
 .startGame{
-    /* background-image: url("../styles/images/Pokemon\ stadium\ Gran.png");  */
-    background-image: url("/styles/images/Estadium\ Plane.jpg");
+    /* background-image: url(".../images/Pokemon\ stadium\ Gran.png");  */
+    background-image: url("./images/Estadium\ Plane.jpg");
     background-size: cover;
     width: 100%;
     height: 100%;
