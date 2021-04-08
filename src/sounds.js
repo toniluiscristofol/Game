@@ -1,10 +1,10 @@
 class Sounds {
 
     constructor(){
-        this.jump = new Audio("../styles/images/sounds/salto.wav")
-        this.lives = new Audio("../styles/images/sounds/vides.wav")
-        this.jump2 = new Audio("../styles/images/sounds/salto2.wav")
-        this.gameover = new Audio("../styles/images/sounds/end.wav")
+        this.jump = new Audio("styles/images/sounds/salto.wav")
+        this.lives = new Audio("styles/images/sounds/vides.wav")
+        this.jump2 = new Audio("styles/images/sounds/salto2.wav")
+        this.gameover = new Audio("styles/images/sounds/end.wav")
     }
     playJump(){
 

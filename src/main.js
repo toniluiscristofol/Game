@@ -65,26 +65,26 @@ function createSplashScreen() {
         let charizarP1 = document.querySelector("#charizarP1")
         let charmanderP1 = document.querySelector("#charmanderP1")
         pikachuP1.addEventListener('click', () =>{
-            img = "../styles/images/personatges3d/pikachu copia.png"
-            imgBullet = "../styles/images/sprites ataque/sprites tygran/amarillo.png"
+            img = "styles/images/personatges3d/pikachu copia.png"
+            imgBullet = "styles/images/sprites ataque/sprites tygran/amarillo.png"
             ready1 = true; 
             
         })
         bulbasaurP1.addEventListener('click', () =>{
-            img = "../styles/images/personatges3d/bulbasaur copia.png"
-            imgBullet = "../styles/images/sprites ataque/sprites tygran/verde.png"
+            img = "styles/images/personatges3d/bulbasaur copia.png"
+            imgBullet = "styles/images/sprites ataque/sprites tygran/verde.png"
             ready1 = true;
             
         })
         charizarP1.addEventListener('click', () =>{
-            img = "../styles/images/personatges3d/charmander copia.png" 
-            imgBullet = "../styles/images/sprites ataque/sprites tygran/rojo.png"
+            img = "styles/images/personatges3d/charmander copia.png" 
+            imgBullet = "styles/images/sprites ataque/sprites tygran/rojo.png"
             ready1 = true;
             
         })
         charmanderP1.addEventListener('click', () =>{
-            img = "../styles/images/personatges3d/squirtle copia.png" 
-            imgBullet = "../styles/images/sprites ataque/sprites tygran/azul.png"
+            img = "styles/images/personatges3d/squirtle copia.png" 
+            imgBullet = "styles/images/sprites ataque/sprites tygran/azul.png"
             ready1 = true;
            
         })
@@ -94,23 +94,23 @@ function createSplashScreen() {
        let charizarP2 = document.querySelector("#charizarP2")
        let charmanderP2 = document.querySelector("#charmanderP2")
        pikachuP2.addEventListener('click', () =>{
-           img2 = "../styles/images/personatges3d/pikachu.png"
-           imgBullet2 = "../styles/images/sprites ataque/sprites tygran/amarillo copia.png"
+           img2 = "styles/images/personatges3d/pikachu.png"
+           imgBullet2 = "styles/images/sprites ataque/sprites tygran/amarillo copia.png"
            ready2 = true;        
        })
        bulbasaurP2.addEventListener('click', () =>{
-           img2 = "../styles/images/personatges3d/bulbasaur.png"
-           imgBullet2 = "../styles/images/sprites ataque/sprites tygran/verde copia.png"
+           img2 = "styles/images/personatges3d/bulbasaur.png"
+           imgBullet2 = "styles/images/sprites ataque/sprites tygran/verde copia.png"
            ready2 = true;
        })
        charizarP2.addEventListener('click', () =>{
-           img2 = "../styles/images/personatges3d/charmander.png" 
-           imgBullet2 = "../styles/images/sprites ataque/sprites tygran/rojo copia.png"
+           img2 = "styles/images/personatges3d/charmander.png" 
+           imgBullet2 = "styles/images/sprites ataque/sprites tygran/rojo copia.png"
            ready2 = true;
        })
        charmanderP2.addEventListener('click', () =>{
-           img2 = "../styles/images/personatges3d/squirtle.png" 
-           imgBullet2 = "../styles/images/sprites ataque/sprites tygran/azul copia.png"
+           img2 = "styles/images/personatges3d/squirtle.png" 
+           imgBullet2 = "styles/images/sprites ataque/sprites tygran/azul copia.png"
            ready2 = true;
        })
 

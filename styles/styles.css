@@ -1,11 +1,11 @@
 @font-face{
     font-family:karma future;
-    src: url(/styles/images/karma\ future.ttf);
+    src: url("../styles/images/karma\ future.ttf");
 }
 
 @font-face{
     font-family:karma suture;
-    src: url(/styles/images/karma\ suture.ttf);
+    src: url("../styles/images/karma\ suture.ttf");
 }
 
 
