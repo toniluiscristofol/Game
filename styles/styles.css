@@ -271,3 +271,11 @@ html {
          font-size: 30px;
          color:yellow;
      }
+
+     #restart{
+         margin-top: 1cm;
+         background-color: crimson;
+         width: 6cm;
+         height: 1cm;
+         font-family: karma future;
+     }

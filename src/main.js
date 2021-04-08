@@ -66,31 +66,27 @@ function createSplashScreen() {
         let charmanderP1 = document.querySelector("#charmanderP1")
         pikachuP1.addEventListener('click', () =>{
             img = "../styles/images/personatges3d/pikachu copia.png"
-            imgBullet = "../styles/images/sprites ataque/rayo.png"
+            imgBullet = "../styles/images/sprites ataque/sprites tygran/amarillo.png"
             ready1 = true; 
-            bulbasaurP1.addClass('selectedPoke')
-            charizarP1.disabled = true;
-            bulbasaurP1.disabled = true;
-            charizarP1.disabled = true;
-            charmanderP1.disabled = true;
+            
         })
         bulbasaurP1.addEventListener('click', () =>{
             img = "../styles/images/personatges3d/bulbasaur copia.png"
-            imgBullet = "../styles/images/sprites ataque/hojas3d.png"
+            imgBullet = "../styles/images/sprites ataque/sprites tygran/verde.png"
             ready1 = true;
-            bulbasaurP1.addClass('selectedPoke')
+            
         })
         charizarP1.addEventListener('click', () =>{
             img = "../styles/images/personatges3d/charmander copia.png" 
-            imgBullet = "../styles/images/sprites ataque/fireball.png"
+            imgBullet = "../styles/images/sprites ataque/sprites tygran/rojo.png"
             ready1 = true;
-            bulbasaurP1.addClass('selectedPoke')
+            
         })
         charmanderP1.addEventListener('click', () =>{
             img = "../styles/images/personatges3d/squirtle copia.png" 
-            imgBullet = "../styles/images/sprites ataque/agua.png" 
+            imgBullet = "../styles/images/sprites ataque/sprites tygran/azul.png"
             ready1 = true;
-            bulbasaurP1.addClass('selectedPoke')
+           
         })
     
        let pikachuP2 = document.querySelector("#pikachuP2")
@@ -98,23 +94,23 @@ function createSplashScreen() {
        let charizarP2 = document.querySelector("#charizarP2")
        let charmanderP2 = document.querySelector("#charmanderP2")
        pikachuP2.addEventListener('click', () =>{
-           img2 = "../styles/images/pikachu 3d.png"
-           imgBullet2 = "../styles/images/sprites ataque/rayo.png"
+           img2 = "../styles/images/personatges3d/pikachu.png"
+           imgBullet2 = "../styles/images/sprites ataque/sprites tygran/amarillo copia.png"
            ready2 = true;        
        })
        bulbasaurP2.addEventListener('click', () =>{
            img2 = "../styles/images/personatges3d/bulbasaur.png"
-           imgBullet2 = "../styles/images/sprites ataque/hojas3d.png" 
+           imgBullet2 = "../styles/images/sprites ataque/sprites tygran/verde copia.png"
            ready2 = true;
        })
        charizarP2.addEventListener('click', () =>{
            img2 = "../styles/images/personatges3d/charmander.png" 
-           imgBullet2 = "../styles/images/sprites ataque/fireball.png"
+           imgBullet2 = "../styles/images/sprites ataque/sprites tygran/rojo copia.png"
            ready2 = true;
        })
        charmanderP2.addEventListener('click', () =>{
            img2 = "../styles/images/personatges3d/squirtle.png" 
-           imgBullet2 = "../styles/images/sprites ataque/agua.png" 
+           imgBullet2 = "../styles/images/sprites ataque/sprites tygran/azul copia.png"
            ready2 = true;
        })
 
@@ -166,7 +162,7 @@ function createGameOverScreen(player1Lives,player2Lives) {
         <div> player 1 lives = ${player1Lives}  </div>
         <div> Player 2 lives = ${player2Lives} </div>
         <div> ${finalResult} </div> </span> </p>
-        <button>Restart</button>
+        <button id="restart">Restart</button>
     </div>
     </main>
     `);

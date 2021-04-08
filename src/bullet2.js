@@ -5,9 +5,14 @@ class Bullet2 {
       this.size = 70;
       this.x = 675;
       this.y = this.canvas.height - 240;
-      this.imgBullet2 = imgBullet2
+      this.img = new Image();
+      this.img.src = imgBullet2
       this.direction = 0;
       this.speed = -10;
+      this.frames = 6;
+      this.spriteWidth = 3072 ;
+      this.spriteHeight = 512;
+      this.framesIndex = 0;
     }
 
   
@@ -21,12 +26,36 @@ class Bullet2 {
           
     }
   
-    draw() {
+    draw(framesCounter) {
 
-        let imgB2 = document.createElement('img');
-        imgB2.src = this.imgBullet2
-        this.ctx.drawImage(imgB2, this.x, this.y, this.size, this.size);
+            //ctx.drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);
+    
+
+    this.ctx.drawImage(
+        this.img,
+        this.framesIndex * Math.floor(this.spriteWidth / this.frames),
+        0,
+        Math.floor(this.spriteWidth / this.frames),
+        this.spriteHeight,
+        this.x,
+        this.y,
+        this.size,
+        this.size
+      )
+      this.animate(framesCounter)
+
+        
     }
+
+
+    animate(framesCounter){
+        if(framesCounter % 10 === 0) {
+          this.framesIndex++
+    
+          if(this.framesIndex > 5) this.framesIndex = 0;
+        }
+      
+      }
 
     
   }

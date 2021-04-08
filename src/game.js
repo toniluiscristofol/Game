@@ -12,6 +12,10 @@ class Game {
       this.score = 0;
       this.livesElement = undefined;
       this.scoreElement = undefined;
+      this.framesCounter = 0;
+      this.framesCounter1 = 0;
+      
+      
  
     }
   
@@ -41,15 +45,16 @@ class Game {
       function handleKeyDown(event) {
         if (event.key === "a") {
             this.player.setDirection("up") 
+
         }
        
-        if (event.key === "d") {
-            this.player.x += 10; 
-        }
+        // if (event.key === "d") {
+        //     this.player.x += 10; 
+        // }
 
-        if (event.key === "z") {
-            this.player.x -= 10; 
-        }
+        // if (event.key === "z") {
+        //     this.player.x -= 10; 
+        // }
         
     
         if (event.key === "ArrowUp") {  
@@ -92,15 +97,15 @@ class Game {
         //3. DIBUJAR DE NUEVO EL CANVAS CON LAS POSICIONES ACTUALIZADAS EN EL PASO 1
         this.player.draw();
         this.player2.draw();
-        this.bullet.draw();
-        this.bullet2.draw();
+        this.bullet.draw(this.framesCounter);
+        this.bullet2.draw(this.framesCounter1);
       
         //4. ROMPER EL LOOP EN CASO DE GAME OVER (LIVES <= 0)
         if (!this.gameIsOver) {
           window.requestAnimationFrame(loop);
         }
         //5. ACTUALIZAR PUNTUACIÓN Y VIDAS que mostramos por pantalla (HTML)
-        this.updateGameStats();
+      
       };
       loop();
     }

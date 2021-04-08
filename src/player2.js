@@ -8,7 +8,8 @@ class Player2 {
       this.size = 130;
       this.x = 750;
       this.y = this.canvas.height - this.size -180;
-      this.img2 = img2;
+      this.img2 = new Image();
+      this.img2.src = img2
       this.direction = 0;
       this.speed = 10;
     }
@@ -43,11 +44,9 @@ class Player2 {
     draw() {
 
         this.ctx.font = "200px karma Future"
-        this.ctx.fillText(this.lives, 800, 200)
-        let imgP2 = document.createElement('img');
-        imgP2.src = this.img2;
-        console.log(imgP2.src)
-        this.ctx.drawImage(imgP2, this.x, this.y, this.size, this.size);
+        this.ctx.fillText(this.lives, 820, 200)
+    
+        this.ctx.drawImage(this.img2, this.x, this.y, this.size, this.size);
        
       
     }
